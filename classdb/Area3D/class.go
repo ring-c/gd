@@ -1,29 +1,33 @@
 // Package Area3D provides methods for working with Area3D object instances.
 package Area3D
 
-import "unsafe"
-import "reflect"
-import "slices"
-import "graphics.gd/internal/pointers"
-import "graphics.gd/internal/callframe"
-import gd "graphics.gd/internal"
-import "graphics.gd/internal/gdclass"
-import "graphics.gd/variant"
-import "graphics.gd/classdb/CollisionObject3D"
-import "graphics.gd/classdb/Node"
-import "graphics.gd/classdb/Node3D"
-import "graphics.gd/variant/Array"
-import "graphics.gd/variant/Callable"
-import "graphics.gd/variant/Dictionary"
-import "graphics.gd/variant/Error"
-import "graphics.gd/variant/Float"
-import "graphics.gd/variant/Object"
-import "graphics.gd/variant/Packed"
-import "graphics.gd/variant/Path"
-import "graphics.gd/variant/RID"
-import "graphics.gd/variant/RefCounted"
-import "graphics.gd/variant/String"
-import "graphics.gd/variant/Vector3"
+import (
+	"reflect"
+	"slices"
+	"unsafe"
+
+	"graphics.gd/internal/callframe"
+	"graphics.gd/internal/pointers"
+
+	"graphics.gd/classdb/CollisionObject3D"
+	"graphics.gd/classdb/Node"
+	"graphics.gd/classdb/Node3D"
+	gd "graphics.gd/internal"
+	"graphics.gd/internal/gdclass"
+	"graphics.gd/variant"
+	"graphics.gd/variant/Array"
+	"graphics.gd/variant/Callable"
+	"graphics.gd/variant/Dictionary"
+	"graphics.gd/variant/Error"
+	"graphics.gd/variant/Float"
+	"graphics.gd/variant/Object"
+	"graphics.gd/variant/Packed"
+	"graphics.gd/variant/Path"
+	"graphics.gd/variant/RID"
+	"graphics.gd/variant/RefCounted"
+	"graphics.gd/variant/String"
+	"graphics.gd/variant/Vector3"
+)
 
 var _ Object.ID
 var _ RefCounted.Instance
@@ -814,11 +818,11 @@ func (self Instance) OnBodyShapeExited(cb func(body_rid RID.Any, body [1]gdclass
 	self[0].AsObject()[0].Connect(gd.NewStringName("body_shape_exited"), gd.NewCallable(cb), 0)
 }
 
-func (self Instance) OnBodyEntered(cb func(body [1]gdclass.Node3D)) {
+func (self Instance) OnBodyEntered(cb func(body Node3D.Instance)) {
 	self[0].AsObject()[0].Connect(gd.NewStringName("body_entered"), gd.NewCallable(cb), 0)
 }
 
-func (self Instance) OnBodyExited(cb func(body [1]gdclass.Node3D)) {
+func (self Instance) OnBodyExited(cb func(body Node3D.Instance)) {
 	self[0].AsObject()[0].Connect(gd.NewStringName("body_exited"), gd.NewCallable(cb), 0)
 }
 

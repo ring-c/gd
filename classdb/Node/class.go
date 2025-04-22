@@ -1,25 +1,29 @@
 // Package Node provides methods for working with Node object instances.
 package Node
 
-import "unsafe"
-import "reflect"
-import "slices"
-import "graphics.gd/internal/pointers"
-import "graphics.gd/internal/callframe"
-import gd "graphics.gd/internal"
-import "graphics.gd/internal/gdclass"
-import "graphics.gd/variant"
-import "graphics.gd/variant/Array"
-import "graphics.gd/variant/Callable"
-import "graphics.gd/variant/Dictionary"
-import "graphics.gd/variant/Error"
-import "graphics.gd/variant/Float"
-import "graphics.gd/variant/Object"
-import "graphics.gd/variant/Packed"
-import "graphics.gd/variant/Path"
-import "graphics.gd/variant/RID"
-import "graphics.gd/variant/RefCounted"
-import "graphics.gd/variant/String"
+import (
+	"reflect"
+	"slices"
+	"unsafe"
+
+	"graphics.gd/internal/callframe"
+	"graphics.gd/internal/pointers"
+
+	gd "graphics.gd/internal"
+	"graphics.gd/internal/gdclass"
+	"graphics.gd/variant"
+	"graphics.gd/variant/Array"
+	"graphics.gd/variant/Callable"
+	"graphics.gd/variant/Dictionary"
+	"graphics.gd/variant/Error"
+	"graphics.gd/variant/Float"
+	"graphics.gd/variant/Object"
+	"graphics.gd/variant/Packed"
+	"graphics.gd/variant/Path"
+	"graphics.gd/variant/RID"
+	"graphics.gd/variant/RefCounted"
+	"graphics.gd/variant/String"
+)
 
 var _ Object.ID
 var _ RefCounted.Instance
